@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,6 +43,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\Cooper\\Desktop\\IS CORE\\Winter\\IS 413\\Mission11_Assignment\\backend\\Mission11_Assignment.API\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\Cooper\\Desktop\\IS CORE\\Winter\\IS 413\\Mission11_Assignment\\backend\\Mission11_Assignment.API\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA2wBwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T20:32:45.785Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -58,32 +71,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BooksController.cs",
-              "DocumentMoniker": "C:\\Users\\Cooper\\Desktop\\IS CORE\\Winter\\IS 413\\Mission11_Assignment\\backend\\Mission11_Assignment.API\\Controllers\\BooksController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
-              "ToolTip": "C:\\Users\\Cooper\\Desktop\\IS CORE\\Winter\\IS 413\\Mission11_Assignment\\backend\\Mission11_Assignment.API\\Controllers\\BooksController.cs",
-              "RelativeToolTip": "Controllers\\BooksController.cs",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBUAAAAIAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAIAAAAAAAAAA==",
->>>>>>> c354bc46ffaca7f0ba7951c20fc25f5ae37c6314
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T20:32:45.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Cooper\\Desktop\\IS CORE\\Winter\\IS 413\\Mission11_Assignment\\backend\\Mission11_Assignment.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Cooper\\Desktop\\IS CORE\\Winter\\IS 413\\Mission11_Assignment\\backend\\Mission11_Assignment.API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T20:28:30.969Z"
+              "WhenOpened": "2025-03-17T20:28:30.969Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

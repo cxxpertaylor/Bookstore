@@ -14,7 +14,10 @@ function BookList() {
       const fetchBooks = async () => {
         //Go look for the data and wait for it to come in. Store it in a variable called "response."
         const response = await fetch(
-          `https://localhost:5000/Books/AllBooks?pageSize=${pageSize}&pageNumber=${pageNumber}`
+          `https://localhost:5000/Books/AllBooks?pageSize=${pageSize}&pageNumber=${pageNumber}`,
+          {
+            credentials: 'include',
+          }
         );
         //Convert response to json and store in new variable called "data".
         const data = await response.json();
