@@ -9,6 +9,10 @@ const CartSummary = () => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+  const totalQuantity = cart.reduce(
+    (quantity, item) => quantity + item.quantity,
+    0
+  );
   return (
     <div
       style={{
@@ -26,7 +30,8 @@ const CartSummary = () => {
       }}
       onClick={() => navigate('/cart')}
     >
-      🛒 <strong>${totalAmount.toFixed(2)}</strong>
+      🛒 <strong>${totalAmount.toFixed(2)}</strong> &nbsp; ({totalQuantity}{' '}
+      items)
     </div>
   );
 };
