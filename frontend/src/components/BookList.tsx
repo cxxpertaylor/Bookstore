@@ -1,20 +1,27 @@
 import { useState, useEffect } from 'react';
-import { Book } from './types/Book';
+import { Book } from '../types/Book';
+import { useNavigate } from 'react-router-dom';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   const [books, setBooks] = useState<Book[]>([]); //Set an array of books
   const [pageSize, setPageSize] = useState<number>(5); //Default to 5 books per page, but the user can change it
   const [pageNumber, setPageNumber] = useState<number>(1); //To keep track of what page number the user is on or wants to go to
   // const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
+  const navigate = useNavigate();
 
   //useEffect goes and gets the data when it needs to, rather than making requests back to back
   useEffect(
     () => {
       const fetchBooks = async () => {
+        //dynamically build variable of selected categories to insert into url for query.
+        const categoryParams = selectedCategories
+          .map((cat) => `bookCategories=${encodeURIComponent(cat)}`)
+          .join('&');
+
         //Go look for the data and wait for it to come in. Store it in a variable called "response."
         const response = await fetch(
-          `https://localhost:5000/Books/AllBooks?pageSize=${pageSize}&pageNumber=${pageNumber}`
+          `https://localhost:5000/Books/AllBooks?pageSize=${pageSize}&pageNumber=${pageNumber}${selectedCategories.length ? `&${categoryParams}` : ''}`
         );
         //Convert response to json and store in new variable called "data".
         const data = await response.json();
@@ -25,14 +32,11 @@ function BookList() {
 
       fetchBooks();
     },
-    [pageSize, pageNumber] //dependency array to set a watch on pageSize and pageNumber so that when they change, useEffect is called and makes another request to the server.
+    [pageSize, pageNumber, selectedCategories] //dependency array to set a watch on pageSize, pageNumber, and selectedCategories so that when they change, useEffect is called and makes another request to the server.
   );
 
   return (
     <>
-      <h1>Books</h1>
-      <br />
-
       {/* Functionality to sort the books by title */}
       <button
         onClick={() =>
@@ -72,6 +76,14 @@ function BookList() {
                 <b>Price:</b> ${b.price}
               </li>
             </ul>
+            <button
+              className="btn btn-success"
+              onClick={() =>
+                navigate(`/cartConfirm/${b.title}/${b.bookID}/${b.price}`)
+              }
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       ))}
