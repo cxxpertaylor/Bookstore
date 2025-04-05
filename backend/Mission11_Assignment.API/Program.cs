@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BooksDbContext>(options =>
 builder.Services.AddCors( options => 
     options.AddPolicy("AllowReactApp", 
     policy => {
-        policy.WithOrigins("http://localhost:3000", "https://bookstore-taylor-backend-awe4afh3f2emekfe.eastus-01.azurewebsites.net")
+        policy.WithOrigins("http://localhost:3000", "https://polite-river-0caf9d11e.6.azurestaticapps.net")
         .AllowAnyMethod()
         .AllowAnyHeader();
     })); // Use cors, which allows us to get requests from specific origins.
