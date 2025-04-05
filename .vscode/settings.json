@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/0dfc305a-07b1-4542-abac-b1095dc0bd9c/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/Bookstore-Taylor-Backend",
+  "appService.deploySubpath": "backend\\Mission11_Assignment.API\\publish"
+}
