@@ -58,6 +58,52 @@ namespace Mission11_Assignment.API.Controllers
         }
 
 
+        //Route to add a book
+        [HttpPost("AddBook")]
+        public IActionResult AddBook([FromBody] Book newBook) 
+        {
+            _booksContext.Books.Add(newBook);
+            _booksContext.SaveChanges();
+            return Ok(newBook);
+        }
+
+
+        //Route to update a book
+        [HttpPut("UpdateBook/{bookID}")]
+        public IActionResult UpdateBook(int bookID, [FromBody] Book updatedBook)
+        {
+            var existingBook = _booksContext.Books.Find(bookID);
+
+            existingBook.Title = updatedBook.Title;
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher = updatedBook.Publisher;
+            existingBook.ISBN = updatedBook.ISBN;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+            existingBook.Price = updatedBook.Price;
+
+            _booksContext.Books.Update(existingBook);
+            _booksContext.SaveChanges();
+            return Ok(existingBook);
+        }
+
+
+        //Route to delete a book
+        [HttpDelete("DeleteBook/{bookID}")]
+        public IActionResult DeleteBook(int bookID)
+        {
+           var book = _booksContext.Books.Find(bookID);
+
+           if (book == null)
+           {
+            return NotFound(new {message = "Book not found."});
+           }
+
+           _booksContext.Remove(book);
+           _booksContext.SaveChanges();
+           return NoContent();
+        }
 
 
     }
