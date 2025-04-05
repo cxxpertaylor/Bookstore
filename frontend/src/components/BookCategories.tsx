@@ -76,7 +76,7 @@ function CategoryFilter({
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          'https://localhost:5000/Books/GetBookCategories'
+          'https://bookstore-taylor-backend-awe4afh3f2emekfe.eastus-01.azurewebsites.net/Books/GetBookCategories'
         );
         const data = await response.json();
         setCategories(data);
